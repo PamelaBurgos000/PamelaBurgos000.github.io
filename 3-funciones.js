@@ -24,7 +24,7 @@
 
 // 2.2 Escribe una función llamada `saludarPersonalizado` que reciba dos parámetros: `nombre` y `apellido`. La función debe devolver "Hola, [nombre] [apellido]".
     function saludarPersonalizado(nombre, apellido){
-        return 'Hola, ${nombre} ${apellido}';
+        return "Hola, " + nombre + " " + apellido;
     }
 
 // 2.3 Crea una función llamada `calcularPotencia` que reciba dos parámetros: base y exponente. La función debe devolver el resultado de elevar la base al exponente.
@@ -50,7 +50,7 @@
 
 // 3.2 Escribe una **function expression** llamada `saludar` que acepte un parámetro `nombre` y devuelva "Hola, [nombre]".
     const saludar = function(nombre){
-        return 'Hola, ${nombre}';
+        return "Hola, " + nombre;
     };
 
 // 3.3 Crea una **function expression** llamada `esPar` que acepte un número como parámetro y devuelva `true` si el número es par, o `false` en caso contrario.
@@ -66,7 +66,7 @@
     const multiplicarFlecha = (a, b) => a * b;
 
 // 4.2 Crea una función flecha llamada `saludarFlecha` que reciba un parámetro `nombre` y devuelva "Hola [nombre]".
-    const saludarFlecha = nombre => `Hola ${nombre}`;
+    const saludarFlecha = nombre => "Hola " + nombre;
 
 // 4.3 Escribe una función flecha llamada `calcularArea` que reciba el radio de un círculo y devuelva el área del círculo. Usa la fórmula A = π * r².
     const calcularArea = radio => Math.PI * Math.pow(radio, 2);
