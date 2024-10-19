@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector de Color RGB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .slider-container {
+            margin: 10px 0;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .color-display {
+            margin-top: 30px;
+        }
+
+        #color-box {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background-color: rgb(128, 128, 128);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selector de Color RGB</h1>
+
+        <div class="slider-container">
+            <label for="red">Rojo: <span id="red-value">128</span></label>
+            <input type="range" id="red" min="0" max="255" value="128">
+        </div>
+
+        <div class="slider-container">
+            <label for="green">Verde: <span id="green-value">128</span></label>
+            <input type="range" id="green" min="0" max="255" value="128">
+        </div>
+
+        <div class="slider-container">
+            <label for="blue">Azul: <span id="blue-value">128</span></label>
+            <input type="range" id="blue" min="0" max="255" value="128">
+        </div>
+
+        <div class="color-display">
+            <p>Color Actual:</p>
+            <div id="color-box"></div>
+        </div>
+    </div>
+
+    <script>
+        
+        const redSlider = document.getElementById('red');
+        const greenSlider = document.getElementById('green');
+        const blueSlider = document.getElementById('blue');
+
+        const redValue = document.getElementById('red-value');
+        const greenValue = document.getElementById('green-value');
+        const blueValue = document.getElementById('blue-value');
+
+        const colorBox = document.getElementById('color-box');
+
+        
+        function updateColor() {
+            const red = redSlider.value;
+            const green = greenSlider.value;
+            const blue = blueSlider.value;
+
+            
+            redValue.textContent = red;
+            greenValue.textContent = green;
+            blueValue.textContent = blue;
+
+            
+            colorBox.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
+
+        
+        redSlider.addEventListener('input', updateColor);
+        greenSlider.addEventListener('input', updateColor);
+        blueSlider.addEventListener('input', updateColor);
+
+        
+        updateColor();
+    </script>
+</body>
+</html>
